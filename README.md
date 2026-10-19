@@ -83,10 +83,11 @@ The template does not copy or distribute any broadcaster application code.
 
 ## Security status
 
-This is a starter, not an audited production service. An inherited dependency
-audit on 2026-10-19 reported 22 production-tree findings (15 high, 7 moderate),
-including Expo/Metro tooling chains. These are not all proven runtime APK issues.
-Run `npm audit` yourself, assess reachability, and apply compatible updates before
-production use. Avoid `npm audit fix --force`: suggested major downgrades can break
-the Expo SDK and native metadata extension. APK/native dependency license review
-is separate from publishing source code.
+This is a starter, not an audited production service. A scoped `uuid` override
+reduced the 2026-10-19 audit from 22 findings to 15 high findings. The remaining
+entries trace to two upstream advisories without published patched versions.
+See [SECURITY.md](SECURITY.md) for versions, dependency paths, precautions and
+recheck commands. These are not all proven runtime APK issues. Avoid
+`npm audit fix --force`: suggested major downgrades can break the Expo SDK and
+native metadata extension. APK/native dependency license review is separate
+from publishing source code.

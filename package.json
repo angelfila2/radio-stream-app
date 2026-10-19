@@ -22,7 +22,7 @@
     "android:native": "node --dns-result-order=ipv4first ./node_modules/expo/bin/cli run:android --port 8081",
     "preandroid:native": "expo prebuild --platform android --no-install",
     "ios": "expo start --ios",
-    "test": "node --test tests/nowPlaying.test.cjs",
+    "test": "node --test tests/*.test.cjs",
     "lint": "expo lint App.tsx station.ts hooks utils plugins tests eslint.config.js",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit"
@@ -37,5 +37,10 @@
     }
   },
   "private": true,
+  "overrides": {
+    "xcode": {
+      "uuid": "11.1.1"
+    }
+  },
   "license": "MIT"
 }
