@@ -1,0 +1,41 @@
+{
+  "name": "radio-streaming-template",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "expo": "~57.0.30",
+    "expo-audio": "57.0.5",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.3"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~57.0.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "npm run android:native",
+    "android:go": "node --dns-result-order=ipv4first ./node_modules/expo/bin/cli start --localhost --android --port 8081",
+    "android:native": "node --dns-result-order=ipv4first ./node_modules/expo/bin/cli run:android --port 8081",
+    "preandroid:native": "expo prebuild --platform android --no-install",
+    "ios": "expo start --ios",
+    "test": "node --test tests/nowPlaying.test.cjs",
+    "lint": "expo lint App.tsx station.ts hooks utils plugins tests eslint.config.js",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit"
+  },
+  "expo": {
+    "autolinking": {
+      "android": {
+        "buildFromSource": [
+          "expo-audio"
+        ]
+      }
+    }
+  },
+  "private": true,
+  "license": "MIT"
+}
